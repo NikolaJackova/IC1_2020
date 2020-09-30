@@ -49,7 +49,7 @@ int main() {
 	}
 	for (int i = 0; i < pocet; i++)
 	{
-		cout << "Trojuhelnik cislo: " << i+1 << " a: " << pole[i].getA() << " b: " << pole[i].getB() << " c: " << pole[i].getC();
+		cout << "Trojuhelnik cislo: " << i+1 << " a: " << pole[i].getA() << " b: " << pole[i].getB() << " c: " << pole[i].getC() << endl;
 	}
 	delete[](pole);
 	cin.get(); cin.get();
