@@ -20,14 +20,18 @@ CashRegister::~CashRegister()
 
 Receipt& CashRegister::CreateReceipt(double amount, double amountVat)
 {
-	if (numberOfReceipts == 10) {
-		throw new exception("Cash registry is full!");
+	if(numberOfReceipts < 10){
+		Receipt receipt{ idCounter, amount, amountVat };
+		receipts[numberOfReceipts] = receipt;
+		cout << "Receipt " << idCounter << " was created" << endl;
+		idCounter++;
+		numberOfReceipts++;
+		return receipt;
 	}
-	Receipt receipt{ idCounter, amount, amountVat };
-	receipts[numberOfReceipts] = receipt;
-	idCounter++;
-	numberOfReceipts++;
-	return receipt;
+	else
+	{
+		cout << "You're trying to create 11. receipt. Cash register is full!" << endl << endl;
+	}
 }
 
 Receipt& CashRegister::GetReceipt(int index)
@@ -38,7 +42,7 @@ Receipt& CashRegister::GetReceipt(int index)
 	else if(numberOfReceipts != 0) {
 		return receipts[0];
 	}
-	throw new exception("There is no receipt to return!");
+	cout << "There is no receipt to return!" << endl << endl;
 }
 
 double CashRegister::GetAmount() const
