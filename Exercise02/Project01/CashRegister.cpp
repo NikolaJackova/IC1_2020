@@ -9,13 +9,11 @@ CashRegister::CashRegister()
 {
 	receipts = new Receipt[10];
 	numberOfReceipts = 0;
-	cout << "CashRegister" << endl;
 }
 
 CashRegister::~CashRegister()
 {
 	delete[] receipts;
-	cout << "~CashRegister" << endl;
 }
 
 Receipt& CashRegister::CreateReceipt(double amount, double amountVat)
@@ -23,14 +21,13 @@ Receipt& CashRegister::CreateReceipt(double amount, double amountVat)
 	if(numberOfReceipts < 10){
 		Receipt receipt{ idCounter, amount, amountVat };
 		receipts[numberOfReceipts] = receipt;
-		cout << "Receipt " << idCounter << " was created" << endl;
 		idCounter++;
 		numberOfReceipts++;
 		return receipt;
 	}
 	else
 	{
-		cout << "You're trying to create 11. receipt. Cash register is full!" << endl << endl;
+		throw "You're trying to create 11. receipt. Cash register is full!";
 	}
 }
 
@@ -39,10 +36,7 @@ Receipt& CashRegister::GetReceipt(int index)
 	if (index + 1 <= numberOfReceipts) {
 		return receipts[index];
 	}
-	else if(numberOfReceipts != 0) {
-		return receipts[0];
-	}
-	cout << "There is no receipt to return!" << endl << endl;
+	return receipts[0];
 }
 
 double CashRegister::GetAmount() const
@@ -70,11 +64,11 @@ int CashRegister::GetNumberOfReceipts() const
 	return numberOfReceipts;
 }
 
-void CashRegister::writeReceipts() const
+void CashRegister::WriteReceipts() const
 {
 	for (int i = 0; i < numberOfReceipts; i++)
 	{
-		receipts[i].writeReceipt();
+		receipts[i].WriteReceipt();
 	}
 }
 

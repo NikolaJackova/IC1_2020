@@ -12,10 +12,6 @@ Receipt::Receipt()
 {
 }
 
-Receipt::~Receipt()
-{
-}
-
 void Receipt::SetId(int id)
 {
 	this->id = id;
@@ -46,7 +42,7 @@ double Receipt::GetAmountVat() const
 	return this->amountVat;
 }
 
-void Receipt::writeReceipt() const
+void Receipt::WriteReceipt() const
 {
 	cout << "Receipt number: " << id << endl;
 	cout << "Amount: " << amount << endl;

@@ -8,13 +8,12 @@ class Receipt {
 public:
 	Receipt(int id, double amount, double amountVat);
 	Receipt();
-	~Receipt();
 	void SetId(int id);
 	int GetId() const;
 	void SetAmount(double amount);
 	double GetAmount() const;
 	void SetAmountVat(double amountVat);
 	double GetAmountVat() const;
-	void writeReceipt() const;
+	void WriteReceipt() const;
 };
 #endif

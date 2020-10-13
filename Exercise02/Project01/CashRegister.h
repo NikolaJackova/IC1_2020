@@ -13,7 +13,7 @@ public:
 	double GetAmount() const;
 	double GetAmountVat() const;
 	int GetNumberOfReceipts() const;
-	void writeReceipts() const;
+	void WriteReceipts() const;
 private:
 	Receipt* receipts;
 	int numberOfReceipts;
