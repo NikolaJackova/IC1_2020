@@ -34,7 +34,7 @@ int main(int argc, char** argv) {
 		cout << staticArray[i] << endl;
 	}
 	cout << endl;
-	cout << "Ids and of moving objects:" << endl;
+	cout << "Ids and coordinates of moving objects:" << endl;
 	for (int i = 0; i < numberOfMovingObjects; i++)
 	{
 		cout << "Id: " << movingObjects[i]->GetId() << " x: " << movingObjects[i]->GetX() << " y: " << movingObjects[i]->GetX() 
