@@ -41,5 +41,10 @@ int main(int argc, char** argv) {
 			<< " angle:"<< movingObjects[i]->GetAngle() << endl;
 	}
 	delete[] staticArray;
+	for (int i = 0; i < numberOfMovingObjects; i++)
+	{
+		delete[] movingObjects[i];
+	}
+	delete[] movingObjects;
 	return 0;
 }
