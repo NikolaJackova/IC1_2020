@@ -46,6 +46,7 @@ MovingObject** Game::FindMovingObjectInLocation(double x, double y, double r, in
 {
 	MovingObject** movingObjects = new MovingObject * [numberOfObjects];
 	int counter = 0;
+	//nejvhodnejsi reseni by bylo: for cyklem zjistit pocet MovingObjects (možná i v dané oblasti), poté až vytvoøit movingObjects**
 	for (int i = 0; i < numberOfObjects; i++)
 	{
 		movingObjects[i] = new MovingObject{ 0 };
@@ -68,6 +69,7 @@ MovingObject** Game::FindMovingObjectInLocation(double x, double y, double r, do
 {
 	MovingObject** movingObjects = new MovingObject * [numberOfObjects];
 	int counter = 0;
+	//nejvhodnejsi reseni by bylo: for cyklem zjistit pocet MovingObjects (možná i v dané oblasti), poté až vytvoøit movingObjects**
 	for (int i = 0; i < numberOfObjects; i++)
 	{
 		movingObjects[i] = new MovingObject{ 0 };
