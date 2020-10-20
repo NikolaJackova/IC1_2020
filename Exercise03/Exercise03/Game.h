@@ -16,7 +16,7 @@ public:
 	int* FindIdStaticObject(double xmin, double xmax, double ymin, double  ymax, int& pocet);
 	MovingObject** FindMovingObjectInLocation(double x, double y, double r, int& pocet);
 	MovingObject** FindMovingObjectInLocation(double x, double y, double r, double umin, double umax, int& pocet);
-	int GetNumberOfObjects();
+	int GetNumberOfObjects() const;
 };
 #endif
 

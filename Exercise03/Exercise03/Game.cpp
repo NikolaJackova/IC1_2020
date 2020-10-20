@@ -86,7 +86,7 @@ MovingObject** Game::FindMovingObjectInLocation(double x, double y, double r, do
 	return movingObjects;
 }
 
-int Game::GetNumberOfObjects()
+int Game::GetNumberOfObjects() const
 {
 	return numberOfObjects;
 }
