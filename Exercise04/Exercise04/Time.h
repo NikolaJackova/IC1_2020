@@ -10,6 +10,7 @@ private:
     int hour;
     int minute;
     int second;
+    int toSeconds() const;
 public:
     Time(int hour, int minute, int second);
     ~Time();

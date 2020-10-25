@@ -1,6 +1,11 @@
 #include "Time.h"
 #include <iostream>
 
+int Time::toSeconds() const
+{
+	return second + (hour*60*60 + minute*60);
+}
+
 Time::Time(int hour, int minute, int second)
 {
 	this->hour = hour;
@@ -29,13 +34,14 @@ int Time::GetSecond() const
 
 int Time::CompareTo(IComparable* obj) const
 {
-	if (this == obj) {
+	Time* time = dynamic_cast<Time*>(obj);
+	if (time->toSeconds() == this->toSeconds()) {
 		return 0;
 	}
-	else if (this < obj) {
+	else if (this->toSeconds() < time->toSeconds()) {
 		return -1;
 	}
-	else if (this > obj) {
+	else if (this->toSeconds() > time->toSeconds()) {
 		return 1;
 	}
 }

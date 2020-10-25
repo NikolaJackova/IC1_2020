@@ -27,10 +27,6 @@ int main() {
 	IComparable** objects = new IComparable * [SIZE];
 	for (int i = 0; i < SIZE; i++)
 	{
-		objects[i] = new Time{0,0,0};
-	}
-	for (int i = 0; i < SIZE; i++)
-	{
 		int h = 0 + rand() % ((23 + 1) - 0);
 		int min = 0 + rand() % ((59 + 1) - 0);
 		int sec = 0 + rand() % ((59 + 1) - 0);
