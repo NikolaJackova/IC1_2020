@@ -18,7 +18,7 @@ public:
     int GetMinute() const;
     int GetSecond() const;
     int CompareTo(IComparable* obj) const override;
-    std::string ToString() override;
+    std::string ToString() const override;
 };
 #endif
 

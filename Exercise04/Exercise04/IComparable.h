@@ -9,7 +9,6 @@ class IComparable :
 public: 
     virtual ~IComparable();
     virtual int CompareTo(IComparable* obj) const = 0;
-    virtual std::string ToString() override = 0;
 };
 #endif
 

@@ -7,7 +7,7 @@ class IObject
 {
 public:
 	virtual ~IObject();
-	virtual std::string ToString() = 0;
+	virtual std::string ToString() const = 0;
 };
 #endif
 

@@ -35,18 +35,21 @@ int Time::GetSecond() const
 int Time::CompareTo(IComparable* obj) const
 {
 	Time* time = dynamic_cast<Time*>(obj);
-	if (time->toSeconds() == this->toSeconds()) {
+	if (time == nullptr) {
+		throw "Nullptr obj or is not Time";
+	}
+	int timeSec = time->toSeconds();
+	int thisSec = this->toSeconds();
+	if (thisSec == timeSec) {
 		return 0;
 	}
-	else if (this->toSeconds() < time->toSeconds()) {
+	else if (thisSec < timeSec) {
 		return -1;
 	}
-	else if (this->toSeconds() > time->toSeconds()) {
-		return 1;
-	}
+	return 1;
 }
 
-std::string Time::ToString()
+std::string Time::ToString() const
 {
 	return "Hodiny: " + std::to_string(hour) + " minuty: " + std::to_string(minute) + " sekundy: " + std::to_string(second) + "\n";
 }
