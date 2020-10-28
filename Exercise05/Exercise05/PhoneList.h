@@ -11,7 +11,6 @@ namespace Model {
 		public:
 			Node* next;
 			Entity::Person data;
-			Node();
 		};
 	private:
 		Node* _start;
@@ -21,7 +20,6 @@ namespace Model {
 		void addPerson(Entity::Person p);
 		std::string findNumber(int id) const;
 		std::string findNumber(std::string name) const;
-		Node* GetStart() const;
 	};
 }
 #endif
