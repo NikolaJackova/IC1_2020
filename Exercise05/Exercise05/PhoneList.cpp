@@ -10,7 +10,6 @@ Model::PhoneList::PhoneList()
 
 Model::PhoneList::~PhoneList()
 {
-	//A value of type Model::PhoneList::Node* cannot be used to initialize an entity of type Model::PhoneList::Node*
 	Node* node = _start;
 	while (node != nullptr) {
 		Node* tmp = node->next;
