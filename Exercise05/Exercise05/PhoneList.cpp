@@ -38,7 +38,7 @@ string Model::PhoneList::findNumber(int id) const
 		}
 		node = node->next;
 	}
-	throw exception("Id is not in the list!");
+	throw invalid_argument("Id is not in the list!");
 
 }
 
@@ -54,5 +54,5 @@ string Model::PhoneList::findNumber(std::string name) const
 		}
 		node = node->next;
 	}
-	throw exception("Name is not is the list!");
+	throw invalid_argument("Name is not is the list!");
 }

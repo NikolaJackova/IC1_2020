@@ -23,8 +23,5 @@ int main() {
 	catch (invalid_argument& e) {
 		cerr << e.what() << endl;
 	}
-	catch(exception& e) {
-		cerr << e.what() << endl;
-	}
 	return 0;
 }
