@@ -4,14 +4,9 @@
 using namespace std;
 Entity::Person::Person(std::string name, std::string phoneNumber, int id)
 {
-    try {
-        if (id < 0 || name.length() == 0 || phoneNumber.length() == 0) {
+    if (id < 0 || name.length() == 0 || phoneNumber.length() == 0) {
             throw invalid_argument("Invalid arguments!");
-        }
-    }
-    catch (invalid_argument& e) {
-        cerr << e.what() << endl;
-    }
+     }
     this->id = id;
     this->name = name;
     this->phoneNumber = phoneNumber;

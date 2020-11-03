@@ -9,14 +9,22 @@ int main() {
 	{
 		string name = "Osoba" + to_string(i);
 		string number = to_string(i)+ to_string(i)+ to_string(i)+ to_string(i)+ to_string(i);
-		Entity::Person p(name, number, i);
-		list->addPerson(p);
+		try {
+			Entity::Person p(name, number, i);
+			list->addPerson(p);
+		}
+		catch (invalid_argument& e) {
+			cerr << e.what() << endl;
+		}
 	}
-	cout << list->findNumber(2) << endl;
-	cout << list->findNumber(70) << endl;
-	cout << list->findNumber(-5) << endl;
-	cout << list->findNumber("Osoba5") << endl;
-	cout << list->findNumber("12") << endl;
-	cout << list->findNumber("") << endl;
+	try {
+		cout << list->findNumber("") << endl;
+	}
+	catch (invalid_argument& e) {
+		cerr << e.what() << endl;
+	}
+	catch(exception& e) {
+		cerr << e.what() << endl;
+	}
 	return 0;
 }
