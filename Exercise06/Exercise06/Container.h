@@ -1,4 +1,6 @@
 #pragma once
+#ifndef CONTAINER_H
+#define CONTAINER_H
 #include <iostream>
 template<typename DateType, int Size, int GrowingSize>
 struct Array {
@@ -41,14 +43,15 @@ bool Array<DateType, Size, GrowingSize>::isFreeSpace() const {
 template<typename DateType, int Size, int GrowingSize>
 void Array<DateType, Size, GrowingSize>::growArray()
 {
-	DateType* temp = new DateType[_sizeOfArray * GrowingSize];
+	int size = _sizeOfArray * GrowingSize;
+	DateType* temp = new DateType[size];
 	for (int i = 0; i < _sizeOfArray; i++)
 	{
 		temp[i] = _array[i];
 	}
 	delete[] _array;
 	_array = temp;
-	_sizeOfArray = _sizeOfArray * GrowingSize;
+	_sizeOfArray = size;
 }
 
 template<typename DateType, int Size, int GrowingSize>
@@ -67,7 +70,7 @@ template<typename DateType, int Size, int GrowingSize>
 DateType& Array<DateType, Size, GrowingSize>::operator[](int index)
 {
 	if (index >= _numberOfElements || index < 0) {
-		throw std::invalid_argument("Invalid index!");
+		throw std::out_of_range("Invalid index!");
 	}
 	return _array[index];
 }
@@ -99,3 +102,4 @@ void Array<DateType, Size, GrowingSize>::remove(int index)
 	}
 	_numberOfElements--;
 }
+#endif
